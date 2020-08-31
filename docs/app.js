@@ -1,45 +1,45 @@
 !(function (e) {
     function t(t) {
         for (
-            var a, n, o = t[0], l = t[1], d = t[2], c = 0, p = [];
+            var a, l, o = t[0], n = t[1], h = t[2], c = 0, p = [];
             c < o.length;
             c++
         )
-            (n = o[c]),
-                Object.prototype.hasOwnProperty.call(i, n) &&
-                    i[n] &&
-                    p.push(i[n][0]),
-                (i[n] = 0);
-        for (a in l)
-            Object.prototype.hasOwnProperty.call(l, a) && (e[a] = l[a]);
-        for (h && h(t); p.length; ) p.shift()();
-        return r.push.apply(r, d || []), s();
+            (l = o[c]),
+                Object.prototype.hasOwnProperty.call(i, l) &&
+                    i[l] &&
+                    p.push(i[l][0]),
+                (i[l] = 0);
+        for (a in n)
+            Object.prototype.hasOwnProperty.call(n, a) && (e[a] = n[a]);
+        for (d && d(t); p.length; ) p.shift()();
+        return r.push.apply(r, h || []), s();
     }
     function s() {
         for (var e, t = 0; t < r.length; t++) {
             for (var s = r[t], a = !0, o = 1; o < s.length; o++) {
-                var l = s[o];
-                0 !== i[l] && (a = !1);
+                var n = s[o];
+                0 !== i[n] && (a = !1);
             }
-            a && (r.splice(t--, 1), (e = n((n.s = s[0]))));
+            a && (r.splice(t--, 1), (e = l((l.s = s[0]))));
         }
         return e;
     }
     var a = {},
         i = { 1: 0 },
         r = [];
-    function n(t) {
+    function l(t) {
         if (a[t]) return a[t].exports;
         var s = (a[t] = { i: t, l: !1, exports: {} });
-        return e[t].call(s.exports, s, s.exports, n), (s.l = !0), s.exports;
+        return e[t].call(s.exports, s, s.exports, l), (s.l = !0), s.exports;
     }
-    (n.m = e),
-        (n.c = a),
-        (n.d = function (e, t, s) {
-            n.o(e, t) ||
+    (l.m = e),
+        (l.c = a),
+        (l.d = function (e, t, s) {
+            l.o(e, t) ||
                 Object.defineProperty(e, t, { enumerable: !0, get: s });
         }),
-        (n.r = function (e) {
+        (l.r = function (e) {
             'undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, {
@@ -47,12 +47,12 @@
                 }),
                 Object.defineProperty(e, '__esModule', { value: !0 });
         }),
-        (n.t = function (e, t) {
-            if ((1 & t && (e = n(e)), 8 & t)) return e;
+        (l.t = function (e, t) {
+            if ((1 & t && (e = l(e)), 8 & t)) return e;
             if (4 & t && 'object' == typeof e && e && e.__esModule) return e;
             var s = Object.create(null);
             if (
-                (n.r(s),
+                (l.r(s),
                 Object.defineProperty(s, 'default', {
                     enumerable: !0,
                     value: e
@@ -60,7 +60,7 @@
                 2 & t && 'string' != typeof e)
             )
                 for (var a in e)
-                    n.d(
+                    l.d(
                         s,
                         a,
                         function (t) {
@@ -69,7 +69,7 @@
                     );
             return s;
         }),
-        (n.n = function (e) {
+        (l.n = function (e) {
             var t =
                 e && e.__esModule
                     ? function () {
@@ -78,17 +78,17 @@
                     : function () {
                           return e;
                       };
-            return n.d(t, 'a', t), t;
+            return l.d(t, 'a', t), t;
         }),
-        (n.o = function (e, t) {
+        (l.o = function (e, t) {
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
-        (n.p = './');
+        (l.p = './');
     var o = (window.webpackJsonp = window.webpackJsonp || []),
-        l = o.push.bind(o);
+        n = o.push.bind(o);
     (o.push = t), (o = o.slice());
-    for (var d = 0; d < o.length; d++) t(o[d]);
-    var h = l;
+    for (var h = 0; h < o.length; h++) t(o[h]);
+    var d = n;
     r.push([1, 0, 2]), s();
 })([
     ,
@@ -136,75 +136,112 @@
                 ].join('');
             }
         ];
-        function n(e, t, s, a) {
-            const { t: i, d: r, h: n, k: o, i: l, b: d } = e,
-                { _m0: h, _m1: c } = a;
+        function l(e, t, s, a) {
+            const { t: i, d: r, h: l, k: o, i: n, b: h } = e,
+                { _m0: d, _m1: c } = a;
             return [
-                n(
+                l(
                     'div',
                     {
                         classMap: {
                             header: !0,
-                            'slds-var-p-around_medium': !0,
-                            'slds-text-align_center': !0
+                            'slds-var-p-around_medium': !0
                         },
-                        key: 0
+                        key: 4
                     },
-                    [i('Score: '), r(t.score)]
+                    [
+                        l('div', { classMap: { 'slds-grid': !0 }, key: 3 }, [
+                            l(
+                                'div',
+                                {
+                                    classMap: {
+                                        'slds-col': !0,
+                                        'slds-size_1-of-3': !0
+                                    },
+                                    key: 0
+                                },
+                                [i('Score: '), r(t.score)]
+                            ),
+                            l(
+                                'div',
+                                {
+                                    classMap: {
+                                        'slds-col': !0,
+                                        'slds-size_1-of-3': !0,
+                                        'slds-text-align_center': !0
+                                    },
+                                    key: 1
+                                },
+                                [i('Speed: '), r(t.displaySpeed), i('x')]
+                            ),
+                            l(
+                                'div',
+                                {
+                                    classMap: {
+                                        'slds-col': !0,
+                                        'slds-size_1-of-3': !0,
+                                        'slds-text-align_right': !0
+                                    },
+                                    key: 2
+                                },
+                                [i('High Score: '), r(t.highScore)]
+                            )
+                        ])
+                    ]
                 ),
-                n('div', { classMap: { 'game-container': !0 }, key: 11 }, [
-                    n(
+                l('div', { classMap: { 'game-container': !0 }, key: 15 }, [
+                    l(
                         'div',
-                        { classMap: { 'game-play': !0 }, key: 2 },
-                        l(t.gameBlocks, function (e) {
-                            return n(
+                        { classMap: { 'game-play': !0 }, key: 6 },
+                        n(t.gameBlocks, function (e) {
+                            return l(
                                 'div',
                                 {
                                     className: e.class,
                                     attrs: { 'data-reference': e.id },
-                                    key: o(1, e.id)
+                                    key: o(5, e.id)
                                 },
                                 [i(' ')]
                             );
                         })
                     ),
                     t.showOverlay
-                        ? n('div', { classMap: { overlay: !0 }, key: 10 }, [
-                              n(
+                        ? l('div', { classMap: { overlay: !0 }, key: 14 }, [
+                              l(
                                   'div',
                                   {
                                       classMap: { 'overlay-content': !0 },
-                                      key: 9
+                                      key: 13
                                   },
                                   [
                                       t.gameOver
-                                          ? n(
+                                          ? l(
                                                 'div',
                                                 {
                                                     classMap: {
                                                         'slds-text-heading_large': !0
                                                     },
-                                                    key: 3
+                                                    key: 7
                                                 },
                                                 [i('Game Over!')]
                                             )
                                           : null,
                                       t.gameOver
-                                          ? n('br', { key: 4 }, [])
+                                          ? l('br', { key: 8 }, [])
                                           : null,
                                       t.gameOver
-                                          ? n(
+                                          ? l(
                                                 'button',
                                                 {
                                                     classMap: {
                                                         'slds-button': !0,
                                                         'slds-button_brand': !0
                                                     },
-                                                    key: 5,
+                                                    key: 9,
                                                     on: {
                                                         click:
-                                                            h ||
-                                                            (a._m0 = d(
+                                                            d ||
+                                                            (a._m0 = h(
                                                                 t.resetGame
                                                             ))
                                                     }
@@ -214,13 +251,13 @@
                                           : null,
                                       t.gameOver
                                           ? null
-                                          : n(
+                                          : l(
                                                 'div',
                                                 {
                                                     classMap: {
                                                         'slds-text-heading_medium': !0
                                                     },
-                                                    key: 6
+                                                    key: 10
                                                 },
                                                 [
                                                     i(
@@ -230,21 +267,21 @@
                                             ),
                                       t.gameOver
                                           ? null
-                                          : n('br', { key: 7 }, []),
+                                          : l('br', { key: 11 }, []),
                                       t.gameOver
                                           ? null
-                                          : n(
+                                          : l(
                                                 'button',
                                                 {
                                                     classMap: {
                                                         'slds-button': !0,
                                                         'slds-button_brand': !0
                                                     },
-                                                    key: 8,
+                                                    key: 12,
                                                     on: {
                                                         click:
                                                             c ||
-                                                            (a._m1 = d(
+                                                            (a._m1 = h(
                                                                 t.startGame
                                                             ))
                                                     }
@@ -258,17 +295,18 @@
                 ])
             ];
         }
-        var o = Object(a.registerTemplate)(n);
-        (n.stylesheets = []),
-            r && n.stylesheets.push.apply(n.stylesheets, r),
-            (n.stylesheetTokens = {
+        var o = Object(a.registerTemplate)(l);
+        (l.stylesheets = []),
+            r && l.stylesheets.push.apply(l.stylesheets, r),
+            (l.stylesheetTokens = {
                 hostAttribute: 'my-game-_game-host',
                 shadowAttribute: 'my-game-_game'
             });
-        class l extends a.LightningElement {
+        class n extends a.LightningElement {
             constructor(...e) {
                 super(...e),
                     (this.score = 0),
+                    (this.highScore = 0),
                     (this.blockSize = 20),
                     (this.gameBlocks = []),
                     (this.renderComplete = !1),
@@ -283,6 +321,14 @@
                     (this.gameOver = !1),
                     (this.speed = 1),
                     (this.intervalObj = void 0);
+            }
+            connectedCallback() {
+                this.highScore = localStorage.getItem('lwc_snake_high')
+                    ? localStorage.getItem('lwc_snake_high')
+                    : 0;
+            }
+            get displaySpeed() {
+                return this.speed.toFixed(1);
             }
             startGame() {
                 (this.showOverlay = !1),
@@ -324,6 +370,12 @@
                         (this.gameBlocks[e].class = 'snake'),
                         this.gameBlocks[e].food &&
                             (this.score++,
+                            this.score > this.highScore &&
+                                ((this.highScore = this.score),
+                                localStorage.setItem(
+                                    'lwc_snake_high',
+                                    this.highScore
+                                )),
                             this.addSpeed(),
                             this.tail.push(`${this.xHead}:${this.yHead}`),
                             (this.gameBlocks[e].food = !1),
@@ -413,10 +465,11 @@
                     clearInterval(this.intervalObj);
             }
         }
-        Object(a.registerDecorators)(l, {
+        Object(a.registerDecorators)(n, {
             track: { gameBlocks: 1 },
             fields: [
                 'score',
+                'highScore',
                 'blockSize',
                 'renderComplete',
                 'xSpeed',
@@ -432,9 +485,9 @@
                 'intervalObj'
             ]
         });
-        var d = Object(a.registerComponent)(l, { tmpl: o });
-        function h(e, t, s, a) {
-            const { t: i, h: r, c: n } = e;
+        var h = Object(a.registerComponent)(n, { tmpl: o });
+        function d(e, t, s, a) {
+            const { t: i, h: r, c: l } = e;
             return [
                 r(
                     'header',
@@ -480,7 +533,7 @@
                     ]
                 ),
                 r('div', { classMap: { container: !0 }, key: 4 }, [
-                    n('my-game', d, { key: 3 }, [])
+                    l('my-game', h, { key: 3 }, [])
                 ]),
                 r(
                     'footer',
@@ -494,7 +547,7 @@
                         key: 9
                     },
                     [
-                        i('Built by Aditya Naag Topalli.'),
+                        i('Built by Aditya Naag Topalli'),
                         r('br', { key: 5 }, []),
                         r(
                             'a',
@@ -507,7 +560,7 @@
                             },
                             [i('Website')]
                         ),
-                        i(' |'),
+                        i(' | '),
                         r(
                             'a',
                             {
@@ -519,7 +572,7 @@
                             },
                             [i('Twitter')]
                         ),
-                        i(' |'),
+                        i(' | '),
                         r(
                             'a',
                             {
@@ -536,16 +589,16 @@
                 )
             ];
         }
-        var c = Object(a.registerTemplate)(h);
-        (h.stylesheets = []),
-            i && h.stylesheets.push.apply(h.stylesheets, i),
-            (h.stylesheetTokens = {
+        var c = Object(a.registerTemplate)(d);
+        (d.stylesheets = []),
+            i && d.stylesheets.push.apply(d.stylesheets, i),
+            (d.stylesheetTokens = {
                 hostAttribute: 'my-app-_app-host',
                 shadowAttribute: 'my-app-_app'
             });
         class p extends a.LightningElement {}
-        var m = Object(a.registerComponent)(p, { tmpl: c });
-        const y = Object(a.createElement)('my-app', { is: m });
-        document.querySelector('#main').appendChild(y);
+        var g = Object(a.registerComponent)(p, { tmpl: c });
+        const m = Object(a.createElement)('my-app', { is: g });
+        document.querySelector('#main').appendChild(m);
     }
 ]);
