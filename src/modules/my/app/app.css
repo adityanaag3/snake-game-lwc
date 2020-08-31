@@ -1,5 +1,8 @@
 .container {
     width: 70vw;
-    margin: 0 auto;
-    margin-top: 10%;
+    margin: 1rem auto;
+}
+
+header {
+    line-height: 30px;
 }

@@ -19,10 +19,23 @@ export default class Game extends LightningElement {
 
     tail = [];
 
+    showOverlay = true;
+    gameOver = false;
+
+    speed = 1;
+    intervalObj;
+
     startGame() {
-        setInterval(() => {
+        this.showOverlay = false;
+        this.intervalObj = setInterval(() => {
             this.move();
-        }, 300);
+        }, 300 / this.speed);
+    }
+
+    addSpeed() {
+        this.speed = this.speed + 0.1;
+        clearInterval(this.intervalObj);
+        this.startGame();
     }
 
     move() {
@@ -57,24 +70,21 @@ export default class Game extends LightningElement {
         }
 
         if (this.tail.includes(`${this.xHead}:${this.yHead}`)) {
-            // eslint-disable-next-line no-alert
-            alert('Game Over');
-            this.tail = [];
-            this.xHead = 0;
-            this.yHead = 0;
-        }
+            this.exitGame();
+        } else {
+            let newPosIndex = this.gameBlocks.findIndex(
+                (x) => x.id === `${this.xHead}:${this.yHead}`
+            );
+            this.gameBlocks[newPosIndex].snake = true;
+            this.gameBlocks[newPosIndex].class = 'snake';
 
-        let newPosIndex = this.gameBlocks.findIndex(
-            (x) => x.id === `${this.xHead}:${this.yHead}`
-        );
-        this.gameBlocks[newPosIndex].snake = true;
-        this.gameBlocks[newPosIndex].class = 'snake';
-
-        if (this.gameBlocks[newPosIndex].food) {
-            this.score++;
-            this.tail.push(`${this.xHead}:${this.yHead}`);
-            this.gameBlocks[newPosIndex].food = false;
-            this.generateFood();
+            if (this.gameBlocks[newPosIndex].food) {
+                this.score++;
+                this.addSpeed();
+                this.tail.push(`${this.xHead}:${this.yHead}`);
+                this.gameBlocks[newPosIndex].food = false;
+                this.generateFood();
+            }
         }
     }
 
@@ -105,55 +115,83 @@ export default class Game extends LightningElement {
     }
 
     generateFood() {
-        let xFood = Math.floor(Math.random() * this.xMax);
-        let yFood = Math.floor(Math.random() * this.yMax);
+        let xFood = Math.floor(Math.random() * (this.xMax - 1));
+        let yFood = Math.floor(Math.random() * (this.yMax - 1));
 
-        let foodPosIndex = this.gameBlocks.findIndex(
-            (x) => x.id === `${xFood}:${yFood}`
-        );
-        this.gameBlocks[foodPosIndex].food = true;
-        this.gameBlocks[foodPosIndex].class = 'food';
+        if (!this.tail.includes(`${xFood}:${yFood}`)) {
+            let foodPosIndex = this.gameBlocks.findIndex(
+                (x) => x.id === `${xFood}:${yFood}`
+            );
+            this.gameBlocks[foodPosIndex].food = true;
+            this.gameBlocks[foodPosIndex].class = 'food';
+        } else {
+            this.generateFood();
+        }
+    }
+
+    renderGameBlocks() {
+        let eWidth = this.template.querySelector('.game-container').clientWidth;
+        let eHeight = this.template.querySelector('.game-container')
+            .clientHeight;
+
+        this.xMax = Math.floor(eWidth / this.blockSize);
+        this.yMax = Math.floor(eHeight / this.blockSize);
+
+        let tmpBlocks = [];
+
+        for (let y = 0; y < this.yMax; y++) {
+            for (let x = 0; x < this.xMax; x++) {
+                let obj;
+                if (x === 0 && y === 0) {
+                    obj = {
+                        id: `${x}:${y}`,
+                        snake: true,
+                        food: false,
+                        class: 'snake'
+                    };
+                } else {
+                    obj = {
+                        id: `${x}:${y}`,
+                        snake: false,
+                        food: false,
+                        class: ''
+                    };
+                }
+                tmpBlocks.push(obj);
+            }
+        }
+        this.gameBlocks = tmpBlocks;
     }
 
     renderedCallback() {
         if (!this.renderComplete) {
-            let eWidth = this.template.querySelector('.game-container')
-                .clientWidth;
-            let eHeight = this.template.querySelector('.game-container')
-                .clientHeight;
-
-            this.xMax = Math.floor(eWidth / this.blockSize);
-            this.yMax = Math.floor(eHeight / this.blockSize);
-
-            let tmpBlocks = [];
-
-            for (let y = 0; y < this.yMax; y++) {
-                for (let x = 0; x < this.xMax; x++) {
-                    let obj;
-                    if (x === 0 && y === 0) {
-                        obj = {
-                            id: `${x}:${y}`,
-                            snake: true,
-                            food: false,
-                            class: 'snake'
-                        };
-                    } else {
-                        obj = {
-                            id: `${x}:${y}`,
-                            snake: false,
-                            food: false,
-                            class: ''
-                        };
-                    }
-                    tmpBlocks.push(obj);
-                }
-            }
-
             this.renderComplete = true;
-            this.gameBlocks = tmpBlocks;
+            this.renderGameBlocks();
             this.addKeyboardControls();
             this.generateFood();
-            this.startGame();
         }
+    }
+
+    resetGame() {
+        this.xSpeed = 1;
+        this.ySpeed = 0;
+
+        this.xHead = 0;
+        this.yHead = 0;
+
+        this.tail = [];
+
+        this.score = 0;
+        this.speed = 1;
+
+        this.renderGameBlocks();
+        this.generateFood();
+        this.startGame();
+    }
+
+    exitGame() {
+        this.showOverlay = true;
+        this.gameOver = true;
+        clearInterval(this.intervalObj);
     }
 }
