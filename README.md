@@ -1,11 +1,12 @@
-# my-app
+# Snake Game built with Lightning Web Components
 
-Here will be some information about the app.
+The classic snake game using Salesforce's standards based UI framework Lightning Web Components (LWC)
 
-## How to start?
+## How to play?
 
-Start simple by running `yarn watch` (or `npm run watch`, if you set up the project with `npm`). This will start the project with a local development server.
+-   Play on [GitHub pages](https://adityanaag3.github.io/snake-game-lwc/)
+-   Play on [Heroku](https://snake-game-lwc.herokuapp.com/)
 
-The source files are located in the [`src`](./src) folder. All web components are within the [`src/modules`](./src/modules) folder. The folder hierarchy also represents the naming structure of the web components.
+## How to build?
 
-Find more information on the main repo on [GitHub](https://github.com/muenzpraeger/create-lwc-app).
+Watch the #CodeLive session on Trailhead Live on Sep 3 at 11 a.m. IST, where this game will be built live.
