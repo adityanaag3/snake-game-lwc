@@ -1,6 +1,16 @@
 <template>
-    <div class="header slds-var-p-around_medium slds-text-align_center">
-        Score: {score}
+    <div class="header slds-var-p-around_medium">
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-3">
+                Score: {score}
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-text-align_center">
+                Speed: {displaySpeed}x
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-text-align_right">
+                High Score: {highScore}
+            </div>
+        </div>
     </div>
     <div class="game-container">
         <div class="game-play">

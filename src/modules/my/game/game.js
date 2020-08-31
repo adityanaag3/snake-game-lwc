@@ -2,6 +2,8 @@ import { LightningElement, track } from 'lwc';
 
 export default class Game extends LightningElement {
     score = 0;
+    highScore = 0;
+
     blockSize = 20;
 
     @track gameBlocks = [];
@@ -24,6 +26,16 @@ export default class Game extends LightningElement {
 
     speed = 1;
     intervalObj;
+
+    connectedCallback() {
+        this.highScore = localStorage.getItem('lwc_snake_high')
+            ? localStorage.getItem('lwc_snake_high')
+            : 0;
+    }
+
+    get displaySpeed() {
+        return this.speed.toFixed(1);
+    }
 
     startGame() {
         this.showOverlay = false;
@@ -80,6 +92,10 @@ export default class Game extends LightningElement {
 
             if (this.gameBlocks[newPosIndex].food) {
                 this.score++;
+                if (this.score > this.highScore) {
+                    this.highScore = this.score;
+                    localStorage.setItem('lwc_snake_high', this.highScore);
+                }
                 this.addSpeed();
                 this.tail.push(`${this.xHead}:${this.yHead}`);
                 this.gameBlocks[newPosIndex].food = false;
