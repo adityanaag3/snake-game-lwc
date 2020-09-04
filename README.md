@@ -9,7 +9,7 @@ The classic snake game using Salesforce's standards based UI framework Lightning
 
 ## How to build?
 
-Watch the #CodeLive session on Trailhead Live on Sep 3 at 11 a.m. IST, where this game will be built live.
+Watch [this video on YouTube](https://www.youtube.com/watch?v=cSdU3WQbm7c) to see how I built this game.
 
 ## Deploy to your own Heroku Instance
 
