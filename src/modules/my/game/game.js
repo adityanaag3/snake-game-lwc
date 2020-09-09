@@ -186,12 +186,14 @@ export default class Game extends LightningElement {
             this.addKeyboardControls();
             this.generateFood();
             window.addEventListener('resize', () => {
-                this.resetGame();
+                this.resetGameMetrics();
+                this.showOverlay = true;
+                this.gameOver = false;
             });
         }
     }
 
-    resetGame() {
+    resetGameMetrics() {
         this.xSpeed = 1;
         this.ySpeed = 0;
 
@@ -206,6 +208,10 @@ export default class Game extends LightningElement {
         this.renderGameBlocks();
         this.generateFood();
         clearInterval(this.intervalObj);
+    }
+
+    resetGame() {
+        this.resetGameMetrics();
         this.startGame();
     }
 
