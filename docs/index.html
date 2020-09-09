@@ -13,14 +13,110 @@
             html {
                 background: #f6fffe;
             }
+
+            .update-banner {
+                background: black;
+                color: white;
+                padding: 10px;
+                text-align: center;
+            }
         </style>
         <meta
             name="viewport"
             content="width=device-width,initial-scale=1,maximum-scale=1"
         />
         <link rel="shortcut icon" href="./resources/favicon.ico" />
+        <link rel="manifest" href="./manifest.json" />
+        <meta name="theme-color" content="#2196f3" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./resources/icons/icon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./resources/icons/icon-32x32.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./resources/icons/icon-180x180.png"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="rcast" />
+        <link
+            rel="apple-touch-icon"
+            href="./resources/icons/icon-152x152.png"
+        />
     </head>
     <body>
+        <noscript
+            ><div class="unsupported">
+                <div class="unsupported_title">LWC app can't be loaded!</div>
+                <div class="unsupported_message">
+                    This application requires javascript to work properly.
+                </div>
+            </div></noscript
+        >
+        <div id="outdated" style="display: none;">
+            <div class="unsupported">
+                <div class="unsupported_title">App can't be loaded!</div>
+                <div class="unsupported_message"></div>
+            </div>
+        </div>
+        <script nomodule>
+            const { outdated } = window;
+            outdated.style.display = 'unset';
+            outdated.querySelector('.unsupported_message').textContent =
+                'This application requires a more recent version of your browser';
+        </script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker
+                        .register('/sw.js')
+                        .then((registration) => {
+                            registration.onupdatefound = () => {
+                                const installingWorker =
+                                    registration.installing;
+                                if (installingWorker == null) {
+                                    return;
+                                }
+                                installingWorker.onstatechange = () => {
+                                    if (
+                                        installingWorker.state === 'installed'
+                                    ) {
+                                        if (
+                                            navigator.serviceWorker.controller
+                                        ) {
+                                            document.getElementById(
+                                                'ua'
+                                            ).style.display = 'block';
+                                        }
+                                    }
+                                };
+                            };
+                        })
+                        .catch((error) => {
+                            console.error(
+                                'Error during service worker registration:',
+                                error
+                            );
+                        });
+                });
+            }
+        </script>
+        <div id="ua" class="update-banner" style="display: none;">
+            An newer version of this game is available. Please restart the app
+            or refresh the browser
+        </div>
         <div id="main"></div>
         <script src="./0.app.js"></script>
         <script src="./2.app.js"></script>

@@ -1,15 +1,15 @@
 !(function (e) {
     function t(t) {
         for (
-            var a, l, o = t[0], n = t[1], h = t[2], c = 0, p = [];
-            c < o.length;
+            var a, o, l = t[0], n = t[1], h = t[2], c = 0, p = [];
+            c < l.length;
             c++
         )
-            (l = o[c]),
-                Object.prototype.hasOwnProperty.call(i, l) &&
-                    i[l] &&
-                    p.push(i[l][0]),
-                (i[l] = 0);
+            (o = l[c]),
+                Object.prototype.hasOwnProperty.call(i, o) &&
+                    i[o] &&
+                    p.push(i[o][0]),
+                (i[o] = 0);
         for (a in n)
             Object.prototype.hasOwnProperty.call(n, a) && (e[a] = n[a]);
         for (d && d(t); p.length; ) p.shift()();
@@ -17,29 +17,29 @@
     }
     function s() {
         for (var e, t = 0; t < r.length; t++) {
-            for (var s = r[t], a = !0, o = 1; o < s.length; o++) {
-                var n = s[o];
+            for (var s = r[t], a = !0, l = 1; l < s.length; l++) {
+                var n = s[l];
                 0 !== i[n] && (a = !1);
             }
-            a && (r.splice(t--, 1), (e = l((l.s = s[0]))));
+            a && (r.splice(t--, 1), (e = o((o.s = s[0]))));
         }
         return e;
     }
     var a = {},
         i = { 1: 0 },
         r = [];
-    function l(t) {
+    function o(t) {
         if (a[t]) return a[t].exports;
         var s = (a[t] = { i: t, l: !1, exports: {} });
-        return e[t].call(s.exports, s, s.exports, l), (s.l = !0), s.exports;
+        return e[t].call(s.exports, s, s.exports, o), (s.l = !0), s.exports;
     }
-    (l.m = e),
-        (l.c = a),
-        (l.d = function (e, t, s) {
-            l.o(e, t) ||
+    (o.m = e),
+        (o.c = a),
+        (o.d = function (e, t, s) {
+            o.o(e, t) ||
                 Object.defineProperty(e, t, { enumerable: !0, get: s });
         }),
-        (l.r = function (e) {
+        (o.r = function (e) {
             'undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, {
@@ -47,12 +47,12 @@
                 }),
                 Object.defineProperty(e, '__esModule', { value: !0 });
         }),
-        (l.t = function (e, t) {
-            if ((1 & t && (e = l(e)), 8 & t)) return e;
+        (o.t = function (e, t) {
+            if ((1 & t && (e = o(e)), 8 & t)) return e;
             if (4 & t && 'object' == typeof e && e && e.__esModule) return e;
             var s = Object.create(null);
             if (
-                (l.r(s),
+                (o.r(s),
                 Object.defineProperty(s, 'default', {
                     enumerable: !0,
                     value: e
@@ -60,7 +60,7 @@
                 2 & t && 'string' != typeof e)
             )
                 for (var a in e)
-                    l.d(
+                    o.d(
                         s,
                         a,
                         function (t) {
@@ -69,7 +69,7 @@
                     );
             return s;
         }),
-        (l.n = function (e) {
+        (o.n = function (e) {
             var t =
                 e && e.__esModule
                     ? function () {
@@ -78,16 +78,16 @@
                     : function () {
                           return e;
                       };
-            return l.d(t, 'a', t), t;
+            return o.d(t, 'a', t), t;
         }),
-        (l.o = function (e, t) {
+        (o.o = function (e, t) {
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
-        (l.p = './');
-    var o = (window.webpackJsonp = window.webpackJsonp || []),
-        n = o.push.bind(o);
-    (o.push = t), (o = o.slice());
-    for (var h = 0; h < o.length; h++) t(o[h]);
+        (o.p = './');
+    var l = (window.webpackJsonp = window.webpackJsonp || []),
+        n = l.push.bind(l);
+    (l.push = t), (l = l.slice());
+    for (var h = 0; h < l.length; h++) t(l[h]);
     var d = n;
     r.push([1, 0, 2]), s();
 })([
@@ -136,11 +136,11 @@
                 ].join('');
             }
         ];
-        function l(e, t, s, a) {
-            const { t: i, d: r, h: l, k: o, i: n, b: h } = e,
+        function o(e, t, s, a) {
+            const { t: i, d: r, h: o, k: l, i: n, b: h } = e,
                 { _m0: d, _m1: c } = a;
             return [
-                l(
+                o(
                     'div',
                     {
                         classMap: {
@@ -150,8 +150,8 @@
                         key: 4
                     },
                     [
-                        l('div', { classMap: { 'slds-grid': !0 }, key: 3 }, [
-                            l(
+                        o('div', { classMap: { 'slds-grid': !0 }, key: 3 }, [
+                            o(
                                 'div',
                                 {
                                     classMap: {
@@ -162,7 +162,7 @@
                                 },
                                 [i('Score: '), r(t.score)]
                             ),
-                            l(
+                            o(
                                 'div',
                                 {
                                     classMap: {
@@ -174,7 +174,7 @@
                                 },
                                 [i('Speed: '), r(t.displaySpeed), i('x')]
                             ),
-                            l(
+                            o(
                                 'div',
                                 {
                                     classMap: {
@@ -189,25 +189,25 @@
                         ])
                     ]
                 ),
-                l('div', { classMap: { 'game-container': !0 }, key: 15 }, [
-                    l(
+                o('div', { classMap: { 'game-container': !0 }, key: 15 }, [
+                    o(
                         'div',
                         { classMap: { 'game-play': !0 }, key: 6 },
                         n(t.gameBlocks, function (e) {
-                            return l(
+                            return o(
                                 'div',
                                 {
                                     className: e.class,
                                     attrs: { 'data-reference': e.id },
-                                    key: o(5, e.id)
+                                    key: l(5, e.id)
                                 },
                                 [i(' ')]
                             );
                         })
                     ),
                     t.showOverlay
-                        ? l('div', { classMap: { overlay: !0 }, key: 14 }, [
-                              l(
+                        ? o('div', { classMap: { overlay: !0 }, key: 14 }, [
+                              o(
                                   'div',
                                   {
                                       classMap: { 'overlay-content': !0 },
@@ -215,7 +215,7 @@
                                   },
                                   [
                                       t.gameOver
-                                          ? l(
+                                          ? o(
                                                 'div',
                                                 {
                                                     classMap: {
@@ -227,10 +227,10 @@
                                             )
                                           : null,
                                       t.gameOver
-                                          ? l('br', { key: 8 }, [])
+                                          ? o('br', { key: 8 }, [])
                                           : null,
                                       t.gameOver
-                                          ? l(
+                                          ? o(
                                                 'button',
                                                 {
                                                     classMap: {
@@ -251,7 +251,7 @@
                                           : null,
                                       t.gameOver
                                           ? null
-                                          : l(
+                                          : o(
                                                 'div',
                                                 {
                                                     classMap: {
@@ -267,10 +267,10 @@
                                             ),
                                       t.gameOver
                                           ? null
-                                          : l('br', { key: 11 }, []),
+                                          : o('br', { key: 11 }, []),
                                       t.gameOver
                                           ? null
-                                          : l(
+                                          : o(
                                                 'button',
                                                 {
                                                     classMap: {
@@ -295,10 +295,10 @@
                 ])
             ];
         }
-        var o = Object(a.registerTemplate)(l);
-        (l.stylesheets = []),
-            r && l.stylesheets.push.apply(l.stylesheets, r),
-            (l.stylesheetTokens = {
+        var l = Object(a.registerTemplate)(o);
+        (o.stylesheets = []),
+            r && o.stylesheets.push.apply(o.stylesheets, r),
+            (o.stylesheetTokens = {
                 hostAttribute: 'my-game-_game-host',
                 shadowAttribute: 'my-game-_game'
             });
@@ -347,7 +347,7 @@
                     `${this.xHead}:${this.yHead}`
                 ) {
                     this.tail.push(`${this.xHead}:${this.yHead}`);
-                    let e = this.tail.shift(),
+                    const e = this.tail.shift(),
                         t = this.gameBlocks.findIndex((t) => t.id === e);
                     (this.gameBlocks[t].snake = !1),
                         (this.gameBlocks[t].class = '');
@@ -363,7 +363,7 @@
                 )
                     this.exitGame();
                 else {
-                    let e = this.gameBlocks.findIndex(
+                    const e = this.gameBlocks.findIndex(
                         (e) => e.id === `${this.xHead}:${this.yHead}`
                     );
                     (this.gameBlocks[e].snake = !0),
@@ -400,11 +400,11 @@
                 });
             }
             generateFood() {
-                let e = Math.floor(Math.random() * (this.xMax - 1)),
+                const e = Math.floor(Math.random() * (this.xMax - 1)),
                     t = Math.floor(Math.random() * (this.yMax - 1));
                 if (this.tail.includes(`${e}:${t}`)) this.generateFood();
                 else {
-                    let s = this.gameBlocks.findIndex(
+                    const s = this.gameBlocks.findIndex(
                         (s) => s.id === `${e}:${t}`
                     );
                     (this.gameBlocks[s].food = !0),
@@ -412,17 +412,16 @@
                 }
             }
             renderGameBlocks() {
-                let e = this.template.querySelector('.game-container')
-                        .clientWidth,
-                    t = this.template.querySelector('.game-container')
-                        .clientHeight;
-                (this.xMax = Math.floor(e / this.blockSize)),
-                    (this.yMax = Math.floor(t / this.blockSize));
-                let s = [];
+                const e = this.template.querySelector('.game-container'),
+                    t = e.clientWidth,
+                    s = e.clientHeight;
+                (this.xMax = Math.floor(t / this.blockSize)),
+                    (this.yMax = Math.floor(s / this.blockSize));
+                const a = [];
                 for (let e = 0; e < this.yMax; e++)
                     for (let t = 0; t < this.xMax; t++) {
-                        let a;
-                        (a =
+                        let s;
+                        (s =
                             0 === t && 0 === e
                                 ? {
                                       id: `${t}:${e}`,
@@ -436,16 +435,19 @@
                                       food: !1,
                                       class: ''
                                   }),
-                            s.push(a);
+                            a.push(s);
                     }
-                this.gameBlocks = s;
+                this.gameBlocks = a;
             }
             renderedCallback() {
                 this.renderComplete ||
                     ((this.renderComplete = !0),
                     this.renderGameBlocks(),
                     this.addKeyboardControls(),
-                    this.generateFood());
+                    this.generateFood(),
+                    window.addEventListener('resize', () => {
+                        this.resetGame();
+                    }));
             }
             resetGame() {
                 (this.xSpeed = 1),
@@ -457,6 +459,7 @@
                     (this.speed = 1),
                     this.renderGameBlocks(),
                     this.generateFood(),
+                    clearInterval(this.intervalObj),
                     this.startGame();
             }
             exitGame() {
@@ -485,9 +488,9 @@
                 'intervalObj'
             ]
         });
-        var h = Object(a.registerComponent)(n, { tmpl: o });
+        var h = Object(a.registerComponent)(n, { tmpl: l });
         function d(e, t, s, a) {
-            const { t: i, h: r, c: l } = e;
+            const { t: i, h: r, c: o } = e;
             return [
                 r(
                     'header',
@@ -533,7 +536,7 @@
                     ]
                 ),
                 r('div', { classMap: { container: !0 }, key: 4 }, [
-                    l('my-game', h, { key: 3 }, [])
+                    o('my-game', h, { key: 3 }, [])
                 ]),
                 r(
                     'footer',
