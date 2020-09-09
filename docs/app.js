@@ -446,10 +446,12 @@
                     this.addKeyboardControls(),
                     this.generateFood(),
                     window.addEventListener('resize', () => {
-                        this.resetGame();
+                        this.resetGameMetrics(),
+                            (this.showOverlay = !0),
+                            (this.gameOver = !1);
                     }));
             }
-            resetGame() {
+            resetGameMetrics() {
                 (this.xSpeed = 1),
                     (this.ySpeed = 0),
                     (this.xHead = 0),
@@ -459,8 +461,10 @@
                     (this.speed = 1),
                     this.renderGameBlocks(),
                     this.generateFood(),
-                    clearInterval(this.intervalObj),
-                    this.startGame();
+                    clearInterval(this.intervalObj);
+            }
+            resetGame() {
+                this.resetGameMetrics(), this.startGame();
             }
             exitGame() {
                 (this.showOverlay = !0),
