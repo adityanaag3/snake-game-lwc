@@ -1,9 +1,9 @@
 {
-    "name": "my-app",
-    "description": "My amazing LWC app",
-    "version": "0.0.1",
+    "name": "snake-game-lwc",
+    "description": "Snake Game built with Lightning Web Components",
+    "version": "1.0.0",
     "author": "adityanaag3",
-    "bugs": "https://github.com/adityanaag3/my-app/issues",
+    "bugs": "https://github.com/adityanaag3/snake-game-lwc/issues",
     "dependencies": {
         "compression": "^1.7.4",
         "express": "^4.17.1",
@@ -21,7 +21,7 @@
         "npm": ">=6.4.1",
         "yarn": ">=1.9.4"
     },
-    "homepage": "https://github.com/adityanaag3/my-app",
+    "homepage": "https://github.com/adityanaag3/snake-game-lwc",
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
@@ -39,10 +39,10 @@
             "eslint"
         ]
     },
-    "repository": "adityanaag3/my-app",
+    "repository": "adityanaag3/snake-game-lwc",
     "scripts": {
-        "build": "lwc-services build -m production",
-        "build:development": "lwc-services build",
+        "build": "lwc-services build -m production -w scripts/webpack.config.js",
+        "build:development": "lwc-services build -w scripts/webpack.config.js",
         "lint": "eslint ./src/**/*.js",
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
@@ -51,6 +51,6 @@
         "test:unit:coverage": "lwc-services test:unit --coverage",
         "test:unit:debug": "lwc-services test:unit --debug",
         "test:unit:watch": "lwc-services test:unit --watch",
-        "watch": "lwc-services watch"
+        "watch": "lwc-services watch -w scripts/webpack.config.js"
     }
 }
