@@ -69,7 +69,7 @@ define('./sw.js', ['./workbox-df7e707f'], function (e) {
                 },
                 {
                     url: './index.html',
-                    revision: '32a3081aea82ec30e71ad94177cc85ce'
+                    revision: '2110d04889f4316a5f4ece26c887d502'
                 },
                 {
                     url: './manifest.json',
