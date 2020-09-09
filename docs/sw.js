@@ -80,10 +80,6 @@ define('./sw.js', ['./workbox-df7e707f'], function (e) {
                     revision: '456324a78b099cc86945fada52b2b21a'
                 },
                 {
-                    url: './resources/fonts/.DS_Store',
-                    revision: '7c13afefab7989db23f1c955188b22e6'
-                },
-                {
                     url: './resources/fonts/License-for-font.txt',
                     revision: '7627764d208f90506cb5eada63ed400b'
                 },
