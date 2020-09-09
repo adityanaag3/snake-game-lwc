@@ -185,6 +185,9 @@ export default class Game extends LightningElement {
             this.renderGameBlocks();
             this.addKeyboardControls();
             this.generateFood();
+            window.addEventListener('resize', () => {
+                this.resetGame();
+            });
         }
     }
 
@@ -202,6 +205,7 @@ export default class Game extends LightningElement {
 
         this.renderGameBlocks();
         this.generateFood();
+        clearInterval(this.intervalObj);
         this.startGame();
     }
 
