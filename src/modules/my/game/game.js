@@ -51,11 +51,11 @@ export default class Game extends LightningElement {
     }
 
     move() {
-        let lastElement = this.tail[this.tail.length - 1];
+        const lastElement = this.tail[this.tail.length - 1];
         if (lastElement !== `${this.xHead}:${this.yHead}`) {
             this.tail.push(`${this.xHead}:${this.yHead}`);
-            let removedElement = this.tail.shift();
-            let curPosIndex = this.gameBlocks.findIndex(
+            const removedElement = this.tail.shift();
+            const curPosIndex = this.gameBlocks.findIndex(
                 (x) => x.id === removedElement
             );
             this.gameBlocks[curPosIndex].snake = false;
@@ -84,7 +84,7 @@ export default class Game extends LightningElement {
         if (this.tail.includes(`${this.xHead}:${this.yHead}`)) {
             this.exitGame();
         } else {
-            let newPosIndex = this.gameBlocks.findIndex(
+            const newPosIndex = this.gameBlocks.findIndex(
                 (x) => x.id === `${this.xHead}:${this.yHead}`
             );
             this.gameBlocks[newPosIndex].snake = true;
@@ -131,11 +131,11 @@ export default class Game extends LightningElement {
     }
 
     generateFood() {
-        let xFood = Math.floor(Math.random() * (this.xMax - 1));
-        let yFood = Math.floor(Math.random() * (this.yMax - 1));
+        const xFood = Math.floor(Math.random() * (this.xMax - 1));
+        const yFood = Math.floor(Math.random() * (this.yMax - 1));
 
         if (!this.tail.includes(`${xFood}:${yFood}`)) {
-            let foodPosIndex = this.gameBlocks.findIndex(
+            const foodPosIndex = this.gameBlocks.findIndex(
                 (x) => x.id === `${xFood}:${yFood}`
             );
             this.gameBlocks[foodPosIndex].food = true;
@@ -146,14 +146,14 @@ export default class Game extends LightningElement {
     }
 
     renderGameBlocks() {
-        let eWidth = this.template.querySelector('.game-container').clientWidth;
-        let eHeight = this.template.querySelector('.game-container')
-            .clientHeight;
+        const gameContainerEl = this.template.querySelector('.game-container');
+        const eWidth = gameContainerEl.clientWidth;
+        const eHeight = gameContainerEl.clientHeight;
 
         this.xMax = Math.floor(eWidth / this.blockSize);
         this.yMax = Math.floor(eHeight / this.blockSize);
 
-        let tmpBlocks = [];
+        const tmpBlocks = [];
 
         for (let y = 0; y < this.yMax; y++) {
             for (let x = 0; x < this.xMax; x++) {
