@@ -4,8 +4,8 @@
     "background_color": "#2196f3",
     "display": "standalone",
     "short_name": "LWCSnake",
-    "Scope": "/",
-    "start_url": "/",
+    "Scope": "/snake-game-lwc/",
+    "start_url": "/snake-game-lwc/",
     "icons": [
         {
             "src": "resources/icons/icon-16x16.png",
