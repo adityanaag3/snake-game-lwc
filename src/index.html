@@ -13,6 +13,13 @@
             html {
                 background: #f6fffe;
             }
+
+            .update-banner {
+                background: black;
+                color: white;
+                padding: 10px;
+                text-align: center;
+            }
         </style>
         <!-- Block zoom -->
         <meta
@@ -20,6 +27,7 @@
             content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <link rel="shortcut icon" href="./resources/favicon.ico" />
+
         <!-- Add manifest for add to home screen -->
         <link rel="manifest" href="./manifest.json" />
 
@@ -57,6 +65,7 @@
             href="./resources/icons/icon-152x152.png"
         />
     </head>
+
     <body>
         <noscript>
             <div class="unsupported">
@@ -84,11 +93,44 @@
         <script>
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/sw.js');
+                    navigator.serviceWorker
+                        .register('/sw.js')
+                        .then((registration) => {
+                            registration.onupdatefound = () => {
+                                const installingWorker =
+                                    registration.installing;
+                                if (installingWorker == null) {
+                                    return;
+                                }
+                                installingWorker.onstatechange = () => {
+                                    if (
+                                        installingWorker.state === 'installed'
+                                    ) {
+                                        if (
+                                            navigator.serviceWorker.controller
+                                        ) {
+                                            document.getElementById(
+                                                'ua'
+                                            ).style.display = 'block';
+                                        }
+                                    }
+                                };
+                            };
+                        })
+                        .catch((error) => {
+                            console.error(
+                                'Error during service worker registration:',
+                                error
+                            );
+                        });
                 });
             }
         </script>
 
+        <div id="ua" class="update-banner" style="display: none;">
+            An newer version of this game is available. Please restart the app
+            or refresh the browser
+        </div>
         <div id="main"></div>
     </body>
 </html>
