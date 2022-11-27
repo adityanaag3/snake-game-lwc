@@ -3,7 +3,7 @@
     "description": "Snake Game built with Lightning Web Components",
     "version": "1.0.0",
     "author": "adityanaag3",
-    "bugs": "https://github.com/adityanaag3/snake-game-lwc/issues",
+    "bugs": "https://github.com/zulfiDOT/snake-game-lwc/issues",
     "dependencies": {
         "compression": "^1.7.4",
         "express": "^4.17.1",
@@ -21,7 +21,7 @@
         "npm": ">=6.4.1",
         "yarn": ">=1.9.4"
     },
-    "homepage": "https://github.com/adityanaag3/snake-game-lwc",
+    "homepage": "https://github.com/zulfiDOT/snake-game-lwc",
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
